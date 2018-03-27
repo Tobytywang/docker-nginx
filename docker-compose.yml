@@ -1,0 +1,18 @@
+version: "2"
+services:
+  nginx:
+    image: nginx
+    networks:
+      - happylich
+    # links:
+    # external_links:
+    ports:
+      - "80:80"
+      - "443:443"
+    # expose:
+    volumes:
+      - /usr/local/docker/nginx/nginx:/etc/nginx
+      - /var/www/html:/usr/share/nginx/html
+networks:
+  happylich:
+    external: true
